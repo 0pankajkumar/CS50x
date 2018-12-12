@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Information
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>:)</td>
+            </tr>
+        </tfoot>
+        <tbody>
+                {% for gra in grand %}
+                <tr>
+                    <td>{{gra[0]}}</td>
+                    <td>${{gra[1]}}</td>
+                    <td>{{gra[2]}}</td>
+                    <td>{{gra[3]}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
